@@ -1,0 +1,31 @@
+<ion-view view-title="Lista con {{num_items}} elementos">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="showPopUpAddServer()">
+      <i class="ion-plus-round" style="font-size: 20px;"></i>
+    </button>
+  </ion-nav-buttons>
+    <ion-content class="" style="margin-bottom: 70px;">
+      <ion-list>
+        <ion-item ng-repeat="item in items" style="padding: 0px;">
+        <div class="row">
+          <div class="col col-33" style="padding: 0px;margin:0px;">
+            <img ng-src="{{item.snippet.thumbnails.default.url}}" width="100px" alt="">
+          </div>
+          <div class="col col-67" style="width:67%;padding: 0px;margin:0px;white-space:pre-line;">
+            {{item.snippet.title}}
+          </div>
+        </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <div class="bar bar-footer" style="height: 70px; padding: 5px;margin:0px;background-color: #F7F7F7">
+      <button class="button button-energized" style="width:49%;margin:0px;padding: 0px;" ng-click="showPopUpSelectServer('queue')">
+        <i class="ion-ios-browsers" style="font-size: 30px;position: relative;top:5px;right: 20px;"></i>
+        <strong style="font-size: 20px">Encolar</strong>
+      </button>
+      <button class="button button-balanced" style="width:49%;margin:0px;padding: 0px;" ng-click="showPopUpSelectServer('play')">
+        <i class="ion-play" style="font-size: 30px;position: relative;top:5px;right: 10px;"></i>
+        <strong style="font-size: 20px;position: relative;left: 10px;">Reproducir</strong>
+      </button>
+    </div>
+  </ion-view>
